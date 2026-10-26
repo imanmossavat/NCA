@@ -1,0 +1,7 @@
+# Installed and tested with Python 3.13.9 (miniconda) on macOS / Apple M4
+torch==2.14.1
+numpy==2.5.4
+pillow==13.0.0
+imageio==2.38.1
+matplotlib==3.11.2
+pytest==9.1.1
