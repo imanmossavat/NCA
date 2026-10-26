@@ -1,0 +1,5 @@
+condition,n,radius,mse_before,mse_after_damage_mean,mse_peak_during_heal_mean,mse_after_heal_mean,mse_after_heal_median,share_healed_within_1.5x,median_steps_to_heal,cells_dead_after_1_step_mean
+RGB only (alpha kept),20,10,0.00068853,0.010926,0.010926,0.00030932,0.00030701,1.0,18.0,0.0
+visible (RGB+alpha),20,10,0.00068853,0.025415,0.025415,0.000726,0.00061704,0.85,44.0,0.801
+hidden only,20,10,0.00068853,0.00068853,0.003084,0.0027518,0.00053844,0.6,0.0,0.0
+both,20,10,0.00068853,0.025415,0.025415,0.00074932,0.00052998,0.8,42.0,0.9

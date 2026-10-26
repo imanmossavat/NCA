@@ -1,0 +1,46 @@
+{
+  "script": "experiments/02_damage_heal.py",
+  "commit": "d2bca73",
+  "seed": 0,
+  "checkpoint": "results/model.pt",
+  "checkpoint_train_step": 8000,
+  "device": "cpu",
+  "grid": 64,
+  "heal_steps": 150,
+  "positions_per_type": 20,
+  "table": [
+    {
+      "damage": "half-cut",
+      "n": 20,
+      "mse_before": 0.00068853,
+      "mse_after_damage_mean": 0.051525,
+      "mse_after_heal_mean": 0.023146,
+      "mse_after_heal_median": 0.026307,
+      "mse_after_heal_max": 0.037798,
+      "recovered_fraction_median": 0.512,
+      "share_healed_within_1.5x": 0.0
+    },
+    {
+      "damage": "hole r=8",
+      "n": 20,
+      "mse_before": 0.00068853,
+      "mse_after_damage_mean": 0.01613,
+      "mse_after_heal_mean": 0.00079345,
+      "mse_after_heal_median": 0.00041062,
+      "mse_after_heal_max": 0.0037295,
+      "recovered_fraction_median": 1.01,
+      "share_healed_within_1.5x": 0.8
+    },
+    {
+      "damage": "40% random erase",
+      "n": 20,
+      "mse_before": 0.00068853,
+      "mse_after_damage_mean": 0.040467,
+      "mse_after_heal_mean": 0.00072437,
+      "mse_after_heal_median": 0.00071258,
+      "mse_after_heal_max": 0.0010411,
+      "recovered_fraction_median": 0.999,
+      "share_healed_within_1.5x": 0.95
+    }
+  ]
+}

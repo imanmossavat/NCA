@@ -1,0 +1,66 @@
+{
+  "script": "experiments/04_hidden_vs_visible.py",
+  "commit": "d2bca73",
+  "seed": 0,
+  "checkpoint": "results/model.pt",
+  "checkpoint_train_step": 8000,
+  "device": "cpu",
+  "grid": 64,
+  "heal_steps": 150,
+  "positions": 20,
+  "radius": 10,
+  "table": [
+    {
+      "condition": "RGB only (alpha kept)",
+      "n": 20,
+      "radius": 10,
+      "mse_before": 0.00068853,
+      "mse_after_damage_mean": 0.010926,
+      "mse_peak_during_heal_mean": 0.010926,
+      "mse_after_heal_mean": 0.00030932,
+      "mse_after_heal_median": 0.00030701,
+      "share_healed_within_1.5x": 1.0,
+      "median_steps_to_heal": 18.0,
+      "cells_dead_after_1_step_mean": 0.0
+    },
+    {
+      "condition": "visible (RGB+alpha)",
+      "n": 20,
+      "radius": 10,
+      "mse_before": 0.00068853,
+      "mse_after_damage_mean": 0.025415,
+      "mse_peak_during_heal_mean": 0.025415,
+      "mse_after_heal_mean": 0.000726,
+      "mse_after_heal_median": 0.00061704,
+      "share_healed_within_1.5x": 0.85,
+      "median_steps_to_heal": 44.0,
+      "cells_dead_after_1_step_mean": 0.801
+    },
+    {
+      "condition": "hidden only",
+      "n": 20,
+      "radius": 10,
+      "mse_before": 0.00068853,
+      "mse_after_damage_mean": 0.00068853,
+      "mse_peak_during_heal_mean": 0.003084,
+      "mse_after_heal_mean": 0.0027518,
+      "mse_after_heal_median": 0.00053844,
+      "share_healed_within_1.5x": 0.6,
+      "median_steps_to_heal": 0.0,
+      "cells_dead_after_1_step_mean": 0.0
+    },
+    {
+      "condition": "both",
+      "n": 20,
+      "radius": 10,
+      "mse_before": 0.00068853,
+      "mse_after_damage_mean": 0.025415,
+      "mse_peak_during_heal_mean": 0.025415,
+      "mse_after_heal_mean": 0.00074932,
+      "mse_after_heal_median": 0.00052998,
+      "share_healed_within_1.5x": 0.8,
+      "median_steps_to_heal": 42.0,
+      "cells_dead_after_1_step_mean": 0.9
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "script": "experiments/03_fate_curve.py",
+  "commit": "d2bca73",
+  "seed": 0,
+  "checkpoint": "results/model.pt",
+  "checkpoint_train_step": 8000,
+  "device": "cpu",
+  "grid": 64,
+  "reference_grown_mse": 0.00068853,
+  "heal_factor": 1.5,
+  "damage_centre": [
+    32,
+    35
+  ],
+  "table": [
+    {
+      "radius": 6,
+      "forks": 50,
+      "mse_after_damage": 0.012429,
+      "share_healed_at_50": 1.0,
+      "share_healed_at_100": 1.0,
+      "share_healed_at_200": 1.0,
+      "first_step_any_healed": 17,
+      "first_step_half_healed": 18,
+      "final_mse_min": 0.00023062,
+      "final_mse_max": 0.00037648
+    },
+    {
+      "radius": 10,
+      "forks": 50,
+      "mse_after_damage": 0.032836,
+      "share_healed_at_50": 1.0,
+      "share_healed_at_100": 1.0,
+      "share_healed_at_200": 1.0,
+      "first_step_any_healed": 34,
+      "first_step_half_healed": 37,
+      "final_mse_min": 0.00033681,
+      "final_mse_max": 0.00076718
+    },
+    {
+      "radius": 14,
+      "forks": 50,
+      "mse_after_damage": 0.061665,
+      "share_healed_at_50": 0.0,
+      "share_healed_at_100": 0.02,
+      "share_healed_at_200": 0.64,
+      "first_step_any_healed": 99,
+      "first_step_half_healed": 137,
+      "final_mse_min": 0.00075129,
+      "final_mse_max": 0.001269
+    }
+  ],
+  "control_same_seed": {
+    "radius": 10,
+    "forks": 50,
+    "max_abs_state_diff_between_forks": 0.0,
+    "share_healed_at_200": 1.0,
+    "identical": true
+  }
+}

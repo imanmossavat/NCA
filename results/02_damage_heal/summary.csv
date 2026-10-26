@@ -1,0 +1,4 @@
+damage,n,mse_before,mse_after_damage_mean,mse_after_heal_mean,mse_after_heal_median,mse_after_heal_max,recovered_fraction_median,share_healed_within_1.5x
+half-cut,20,0.00068853,0.051525,0.023146,0.026307,0.037798,0.512,0.0
+hole r=8,20,0.00068853,0.01613,0.00079345,0.00041062,0.0037295,1.01,0.8
+40% random erase,20,0.00068853,0.040467,0.00072437,0.00071258,0.0010411,0.999,0.95

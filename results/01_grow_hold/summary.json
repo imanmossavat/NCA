@@ -1,0 +1,18 @@
+{
+  "script": "experiments/01_grow_hold.py",
+  "commit": "d2bca73",
+  "seed": 0,
+  "checkpoint": "results/model.pt",
+  "checkpoint_train_step": 8000,
+  "device": "cpu",
+  "grid": 64,
+  "runs": 8,
+  "grow_steps": 120,
+  "hold_steps": 200,
+  "mse_at_grown_mean": 0.00059845,
+  "mse_at_end_mean": 0.00022317,
+  "mse_max_during_hold_mean": 0.00059845,
+  "end_over_grown_ratio_mean": 0.338,
+  "end_over_grown_ratio_max": 0.636,
+  "runs_stable_within_1.5x": 8
+}

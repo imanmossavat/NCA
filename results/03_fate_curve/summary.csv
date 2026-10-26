@@ -1,0 +1,4 @@
+radius,forks,mse_after_damage,share_healed_at_50,share_healed_at_100,share_healed_at_200,first_step_any_healed,first_step_half_healed,final_mse_min,final_mse_max
+6,50,0.012429,1.0,1.0,1.0,17,18,0.00023062,0.00037648
+10,50,0.032836,1.0,1.0,1.0,34,37,0.00033681,0.00076718
+14,50,0.061665,0.0,0.02,0.64,99,137,0.00075129,0.001269
