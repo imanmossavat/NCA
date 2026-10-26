@@ -33,3 +33,8 @@ One line per judgement call, with why.
 - Run 2: lever 1, more steps: 8000 steps, everything else unchanged.
 - Run 2 result: 8000 steps, 16.7 min on MPS, final loss 0.0005. Grown MSE 0.00034 (untrained 0.100), after 200-step hold 0.00009; midrib and all 5 side-vein pairs visible; hole and 40% erase heal to ~0.0003. Acceptance met -> stopped after 2 of 4 allowed runs (~25 min training compute). Half-cut still does not regrow: reported as a limit, not chased (training damage is circles of radius <= ~13 px, a half-cut is far outside that).
 - Committed checkpoint = run 2 (`results/model.pt`, 36 KB), with its loss curve and training config.
+- Experiment 5 (pilot) run because the budget allowed it (~63 min training in total, under the ~2 h cap): seeds 1-3, 6000 steps each (fits the 15-min cap at ~0.125 s/step), sequentially, never two trainings at once. Its checkpoints stay in `runs/` (not committed); only results are committed.
+- Experiment 5 reuses `02_damage_heal.py` via env vars (`LEAFNCA_CKPT`, `LEAFNCA_OUT`) instead of copying code.
+- No commits during the pilot, so all three seeds carry the same provenance commit.
+- REPORT tables are generated into `results/tables.md` by `experiments/make_tables.py`. REPORT.md shows selected columns from it, with values rounded to 2-3 significant figures.
+- No NaNs and no MPS problems happened, so no CPU fallback runs were needed.
