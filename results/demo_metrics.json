@@ -1,0 +1,19 @@
+{
+  "mse": {
+    "grown": 0.000341,
+    "after_hold": 9.3e-05,
+    "half-cut damaged": 0.050682,
+    "half-cut healed": 0.030705,
+    "circle-hole damaged": 0.026608,
+    "circle-hole healed": 0.000304,
+    "40%-random-erase damaged": 0.040315,
+    "40%-random-erase healed": 0.000254,
+    "untrained model, grown (baseline)": 0.100387
+  },
+  "seed": 0,
+  "commit": "d1fd324",
+  "ckpt": "results/model.pt",
+  "grow": 120,
+  "hold": 200,
+  "heal": 150
+}
