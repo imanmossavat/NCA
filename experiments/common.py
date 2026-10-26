@@ -26,7 +26,7 @@ class Exp:
         torch.set_grad_enabled(False)
         self.name, self.script, self.seed = name, script, seed
         self.dev = get_device(DEVICE)
-        self.out = ROOT / "results" / name
+        self.out = ROOT / "results" / os.environ.get("LEAFNCA_OUT", name)  # env override for exp 5
         self.out.mkdir(parents=True, exist_ok=True)
         self.ca, ck = M.load(CKPT, self.dev)
         self.target = load_target(ck.get("target", "leaf"), device=self.dev)
