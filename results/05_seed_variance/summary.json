@@ -1,0 +1,131 @@
+{
+  "script": "experiments/05_seed_variance.py",
+  "commit": "3c2d3d2",
+  "status": "pilot",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "steps": 6000,
+  "max_minutes": 15,
+  "table": [
+    {
+      "train_seed": 1,
+      "train_steps": 6000,
+      "damage": "half-cut",
+      "n": "20",
+      "mse_before": "0.001101",
+      "mse_after_damage_mean": "0.051759",
+      "mse_after_heal_mean": "0.021792",
+      "mse_after_heal_median": "0.019339",
+      "mse_after_heal_max": "0.038386",
+      "recovered_fraction_median": "0.649",
+      "share_healed_within_1.5x": "0.0"
+    },
+    {
+      "train_seed": 1,
+      "train_steps": 6000,
+      "damage": "hole r=8",
+      "n": "20",
+      "mse_before": "0.001101",
+      "mse_after_damage_mean": "0.016496",
+      "mse_after_heal_mean": "0.0018341",
+      "mse_after_heal_median": "0.0012059",
+      "mse_after_heal_max": "0.0055079",
+      "recovered_fraction_median": "0.992",
+      "share_healed_within_1.5x": "0.75"
+    },
+    {
+      "train_seed": 1,
+      "train_steps": 6000,
+      "damage": "40% random erase",
+      "n": "20",
+      "mse_before": "0.001101",
+      "mse_after_damage_mean": "0.040722",
+      "mse_after_heal_mean": "0.0015072",
+      "mse_after_heal_median": "0.0015127",
+      "mse_after_heal_max": "0.002058",
+      "recovered_fraction_median": "0.99",
+      "share_healed_within_1.5x": "0.65"
+    },
+    {
+      "train_seed": 2,
+      "train_steps": 6000,
+      "damage": "half-cut",
+      "n": "20",
+      "mse_before": "0.0025368",
+      "mse_after_damage_mean": "0.052402",
+      "mse_after_heal_mean": "0.017273",
+      "mse_after_heal_median": "0.013243",
+      "mse_after_heal_max": "0.038084",
+      "recovered_fraction_median": "0.79",
+      "share_healed_within_1.5x": "0.05"
+    },
+    {
+      "train_seed": 2,
+      "train_steps": 6000,
+      "damage": "hole r=8",
+      "n": "20",
+      "mse_before": "0.0025368",
+      "mse_after_damage_mean": "0.017758",
+      "mse_after_heal_mean": "0.0031314",
+      "mse_after_heal_median": "0.0026835",
+      "mse_after_heal_max": "0.0056994",
+      "recovered_fraction_median": "0.991",
+      "share_healed_within_1.5x": "0.8"
+    },
+    {
+      "train_seed": 2,
+      "train_steps": 6000,
+      "damage": "40% random erase",
+      "n": "20",
+      "mse_before": "0.0025368",
+      "mse_after_damage_mean": "0.041583",
+      "mse_after_heal_mean": "0.0032818",
+      "mse_after_heal_median": "0.0032771",
+      "mse_after_heal_max": "0.0041725",
+      "recovered_fraction_median": "0.981",
+      "share_healed_within_1.5x": "0.9"
+    },
+    {
+      "train_seed": 3,
+      "train_steps": 6000,
+      "damage": "half-cut",
+      "n": "20",
+      "mse_before": "0.0013351",
+      "mse_after_damage_mean": "0.051882",
+      "mse_after_heal_mean": "0.022559",
+      "mse_after_heal_median": "0.025448",
+      "mse_after_heal_max": "0.037924",
+      "recovered_fraction_median": "0.544",
+      "share_healed_within_1.5x": "0.0"
+    },
+    {
+      "train_seed": 3,
+      "train_steps": 6000,
+      "damage": "hole r=8",
+      "n": "20",
+      "mse_before": "0.0013351",
+      "mse_after_damage_mean": "0.016686",
+      "mse_after_heal_mean": "0.0016281",
+      "mse_after_heal_median": "0.0012317",
+      "mse_after_heal_max": "0.003246",
+      "recovered_fraction_median": "1.0",
+      "share_healed_within_1.5x": "0.7"
+    },
+    {
+      "train_seed": 3,
+      "train_steps": 6000,
+      "damage": "40% random erase",
+      "n": "20",
+      "mse_before": "0.0013351",
+      "mse_after_damage_mean": "0.040861",
+      "mse_after_heal_mean": "0.0035873",
+      "mse_after_heal_median": "0.003544",
+      "mse_after_heal_max": "0.0048939",
+      "recovered_fraction_median": "0.944",
+      "share_healed_within_1.5x": "0.0"
+    }
+  ]
+}
