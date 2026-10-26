@@ -31,3 +31,5 @@ One line per judgement call, with why.
 ## Training runs (max 4)
 - Run 1: defaults (hidden 128, lr 2e-3, rollout 64-96, 4000 steps, 8.4 min on MPS). Final loss 0.0018. Grown MSE 0.0014, stable over 200-step hold (0.0011); untrained baseline 0.100. Holes and 40% erase heal to ~0.0013; half-cut does not (0.051 -> 0.028). Midrib clear, side veins faint and incomplete -> acceptance not met on veins.
 - Run 2: lever 1, more steps: 8000 steps, everything else unchanged.
+- Run 2 result: 8000 steps, 16.7 min on MPS, final loss 0.0005. Grown MSE 0.00034 (untrained 0.100), after 200-step hold 0.00009; midrib and all 5 side-vein pairs visible; hole and 40% erase heal to ~0.0003. Acceptance met -> stopped after 2 of 4 allowed runs (~25 min training compute). Half-cut still does not regrow: reported as a limit, not chased (training damage is circles of radius <= ~13 px, a half-cut is far outside that).
+- Committed checkpoint = run 2 (`results/model.pt`, 36 KB), with its loss curve and training config.

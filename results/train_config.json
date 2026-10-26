@@ -1,0 +1,23 @@
+{
+  "target": "leaf",
+  "seed": 0,
+  "commit": "bf3a020",
+  "device": "mps",
+  "args": {
+    "target": "leaf",
+    "out": "runs/run2",
+    "steps": 8000,
+    "pool": 256,
+    "batch": 8,
+    "damage": 3,
+    "hidden": 128,
+    "lr": 0.002,
+    "min_rollout": 64,
+    "max_rollout": 96,
+    "ckpt_every": 250,
+    "resume": null,
+    "seed": 0,
+    "device": null,
+    "max_minutes": 30.0
+  }
+}
