@@ -62,13 +62,15 @@ def demo(a):
     keys.append(frame(target, "target"))
     x = run(M.seed(1, H, device=dev), a.grow, "grow"); keys.append(frame(x, f"grown t={a.grow}"))
     metrics["grown"] = err(x)
-    x = run(x, a.hold, "hold", every=10); keys.append(frame(x, f"held +{a.hold}")); metrics["after_hold"] = err(x)
-    for name, fn in damages:
-        xd = fn(x); keys.append(frame(xd, f"damaged: {name}")); metrics[f"{name} damaged"] = err(xd)
+    held = run(x, a.hold, "hold", every=10); keys.append(frame(held, f"held +{a.hold}"))
+    metrics["after_hold"] = err(held)
+    for name, fn in damages:  # each damage starts from the same held leaf
+        xd = fn(held); keys.append(frame(xd, f"damaged: {name}")); metrics[f"{name} damaged"] = err(xd)
         for _ in range(8):
             frames.append(frame(xd, f"damaged: {name}"))  # pause on the damage
         x = run(xd, a.heal, f"heal {name}"); keys.append(frame(x, f"healed: {name}"))
         metrics[f"{name} healed"] = err(x)
+    metrics["untrained model, grown (baseline)"] = err(M.CA().to(dev).rollout(M.seed(1, H, device=dev), a.grow))
 
     os.makedirs(a.out, exist_ok=True)
     imageio.mimsave(f"{a.out}/demo.gif", [np.array(f) for f in frames], duration=0.06, loop=0)

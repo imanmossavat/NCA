@@ -17,3 +17,17 @@ One line per judgement call, with why.
 - Gradient normalisation guarded against `None` grads; training stops on a non-finite loss.
 - Rollout length range, hidden size, lr, seed, device exposed as flags (the levers the brief allows).
 - Hidden size default stays 128 as in `nca.py`, so the "hidden size 128" lever is already applied; it will be skipped in the lever order.
+- Training runs on MPS (0.23 s/step vs 1.06 s/step on CPU in a 10-step benchmark); experiments run on CPU so seeded firing masks are exactly reproducible (they take ~2 min in total).
+- Demo: each damage now starts from the same held leaf (`nca.py` chained them, so one failed heal contaminated the next damage). Added an untrained-model baseline MSE for the acceptance check.
+
+## Experiments
+- Healed = MSE within 1.5x the grown-leaf MSE (brief's fate-curve criterion), used in every experiment for consistency.
+- Grown leaf for experiments 2-4 = 120 steps from one seed with firing seed 0; its MSE is the reference.
+- Exp 2 "cut half": half-plane through the grid centre at a random angle (20 angles); hole: radius 8 centred on a random blade pixel; erase: 40% of cells, 20 mask seeds.
+- Exp 3: hole radii 6/10/14 at a fixed spot just right of the midrib, 200 steps; 50 forks in one batch with one generator (so each fork draws different firing masks). Control: 50 forks each with its own generator seeded identically.
+- Exp 4: added a 4th condition "RGB only (alpha kept)": erasing alpha marks cells dead, so the alive mask wipes their hidden state too; without this condition "visible" and "both" would be nearly the same test. Hidden-only erase leaves the picture untouched, so its key number is the peak MSE while recovering.
+- Exp 1: 8 firing seeds in one batch, to show spread.
+
+## Training runs (max 4)
+- Run 1: defaults (hidden 128, lr 2e-3, rollout 64-96, 4000 steps, 8.4 min on MPS). Final loss 0.0018. Grown MSE 0.0014, stable over 200-step hold (0.0011); untrained baseline 0.100. Holes and 40% erase heal to ~0.0013; half-cut does not (0.051 -> 0.028). Midrib clear, side veins faint and incomplete -> acceptance not met on veins.
+- Run 2: lever 1, more steps: 8000 steps, everything else unchanged.
