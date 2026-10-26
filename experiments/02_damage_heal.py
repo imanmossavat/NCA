@@ -59,6 +59,7 @@ for name in curves:
     table.append({"damage": name, "n": N, "mse_before": fmt(before),
                   "mse_after_damage_mean": fmt(col("mse_after_damage").mean()),
                   "mse_after_heal_mean": fmt(col("mse_after_heal").mean()),
+                  "mse_after_heal_median": fmt(np.median(col("mse_after_heal"))),
                   "mse_after_heal_max": fmt(col("mse_after_heal").max()),
                   "recovered_fraction_median": fmt(np.median(col("recovered_fraction")), 3),
                   "share_healed_within_1.5x": fmt(col("healed_within_1.5x").mean(), 3)})

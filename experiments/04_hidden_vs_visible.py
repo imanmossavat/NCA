@@ -62,6 +62,7 @@ for name, _ in CONDITIONS:
                   "mse_after_damage_mean": fmt(col("mse_after_damage").mean()),
                   "mse_peak_during_heal_mean": fmt(col("mse_peak_during_heal").mean()),
                   "mse_after_heal_mean": fmt(col("mse_after_heal").mean()),
+                  "mse_after_heal_median": fmt(np.median(col("mse_after_heal"))),
                   "share_healed_within_1.5x": fmt(col("healed_within_1.5x").mean(), 3),
                   "median_steps_to_heal": float(np.median(done)) if done else None,
                   "cells_dead_after_1_step_mean": fmt(col("cells_dead_after_1_step").mean(), 3)})
